@@ -76,30 +76,34 @@ namespace _01.List
         public void InventoryOpen()
         {
             Console.WriteLine("==========인벤토리==========\n");
-            if (list[0] == null)
+            if (list.Count == 0)
             {
-                Console.WriteLine("인벤토리가 비어있습니다.");                
+                Console.WriteLine("인벤토리가 비어있습니다.\n\n");                
             }
             else
             {
-                for (int i = 0; i < list.Count; i++)
-                {
-                    Console.WriteLine("===인벤토리 목록===\n");
-                    Console.WriteLine($"{i+1}. {list[i]}");
-                }
+                this.InventoryList();
             }                
         }
 
+        public void InventoryList()
+        {
+            Console.WriteLine("===인벤토리 목록===\n");
+            for (int i = 0; i < list.Count; i++)
+            {                
+                Console.WriteLine($"{i + 1}. {list[i]}");
+            }
+        }
         public void Storing(string itemName)             // 인벤토리에 넣기
         {
             list.Add(itemName);
-            Console.WriteLine($"{itemName}을 넣었습니다.");
+            Console.WriteLine($"\n\n{itemName}을 넣었습니다.\n\n");
         }
 
         public void Dropping(string itemName)            // 인벤토리에서 버리기
         {
             list.Remove(itemName);
-            Console.WriteLine($"{itemName}을 버렸습니다.");
+            Console.WriteLine($"\n\n{itemName}을 버렸습니다.\n\n");
         }
                
     }
@@ -111,6 +115,12 @@ namespace _01.List
             Inventory inventory = new Inventory();
 
             inventory.InventoryOpen();
+            inventory.Storing("한손검");
+            inventory.InventoryList();
+            inventory.Storing("여신의눈물");
+            inventory.InventoryList();
+            inventory.Dropping("한손검");
+            inventory.InventoryList();
         }
     }
 }

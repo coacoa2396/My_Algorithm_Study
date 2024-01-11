@@ -91,7 +91,7 @@ namespace Datastructure
                 throw new ArgumentOutOfRangeException("index");
 
             count--;
-            Array.Copy(items, index + 1, items, index);
+            //Array.Copy(items, index + 1, items, index);
         }
          
         public int IndexOf(T item)
@@ -112,7 +112,7 @@ namespace Datastructure
             if (match == null)
                 throw new ArgumentNullException();
 
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < count; i++)
             {
                 if (match(items[i]))
                     return i;
