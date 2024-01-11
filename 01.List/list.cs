@@ -22,7 +22,7 @@ namespace Datastructure
         
         public List(int capacity)
         {
-            items = new T[capacity]
+            items = new T[capacity];
             count = 0;
         }
         public int Capacity { get { return items.Length; } }
@@ -33,14 +33,14 @@ namespace Datastructure
         {
             get
             {
-                if (index < 0 || index >= size)
+                if (index < 0 || index >= count)
                     throw new IndexOutOfRangeException();
 
                 return items[index];
             }
             set
             {
-                if (index < 0 || index >= size)
+                if (index < 0 || index >= count)
                     throw new IndexOutOfRangeException();
 
                 items[index] = value;

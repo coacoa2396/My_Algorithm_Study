@@ -78,7 +78,7 @@ namespace _01.List
 
 
 
-        static void Main(string[] args)
+        static void Main111(string[] args)
         {
             List<string> list = new List<string>();
 
