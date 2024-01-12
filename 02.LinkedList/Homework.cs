@@ -71,43 +71,42 @@ namespace _02.LinkedList
     {
         public void Josephus(int n, int k)
         {
-            LinkedList<int> list = new LinkedList<int>();
-            LinkedListNode<string> node;
-
-            LinkedList<int> answer = new LinkedList<int>();
-
-            int count = 0;
-            int a = 0;
-            for(int i = 1; i <= n; i++)
-            {
-                list.AddLast(i);
-            }
-
-            // 깨달아 버렸?다
-            // 원본을 바꿔야 하는데 어케하지
-
-
-            do
-            {                
-                for (int i = 0; i < k; i++)
-                {
-                    count++;
-                    if (count == k)
-                    {
-                        answer.AddFirst(list.First.Value);
-                        list.RemoveFirst();
-                        count = 1;
-                    }
-                    else
-                    {
-                        list.AddLast(list.First.Value);
-                        list.RemoveFirst();
-                    }
-                }
-            } while (list.First != null);
-
-            foreach (int element in answer) { Console.Write($"{element} "); }
             
+            
+                LinkedList<int> list = new LinkedList<int>();
+                LinkedListNode<int> node;
+
+                LinkedList<int> answer = new LinkedList<int>();
+
+                int count = 0;
+
+                for (int i = 1; i <= n; i++)
+                {
+                    list.AddLast(i);
+                }
+
+                do
+                {
+                    for (int i = 0; i < k-1; i++)
+                    {
+                        count++;
+                        if (count == k-1)
+                        {
+                            answer.AddFirst(list.First.Value);
+                            list.RemoveFirst();
+                            count = 0; // count를 0으로 초기화하여 다음 루프에서 다시 시작할 수 있도록 함
+                        }
+                        else
+                        {
+                            list.AddLast(list.First.Value);
+                            list.RemoveFirst();
+                        }
+                    }
+                } while (list.First != null);
+
+                foreach (int element in answer) { Console.Write($"{element} "); }
+
+             
         }
     }
 
