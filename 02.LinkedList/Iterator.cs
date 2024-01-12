@@ -89,7 +89,7 @@ namespace _02.LinkedList
         // <foreach 반복문>
         // 반복기를 이용하는 반복문
         // IEnumerable 인터페이스를 포함하는 객체에 사용가능
-        void Main3()
+        void Main14234213()
         {
             int size = 5;
             int[] array = new int[size];
