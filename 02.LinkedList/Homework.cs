@@ -94,7 +94,7 @@ namespace _02.LinkedList
                     if (i == k)
                     {
                         // 빼서 답 리스트에 넣기
-                        answer.AddLast(node);
+                        answer.AddLast(node);           // 예외를 뱉는 부분
                         list.Remove(node);
                     }
                     else
