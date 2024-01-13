@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace _02.LinkedList
 {
@@ -73,40 +74,39 @@ namespace _02.LinkedList
         {
             
             
-                LinkedList<int> list = new LinkedList<int>();
-                LinkedListNode<int> node;
+            LinkedList<int> list = new LinkedList<int>();
+            LinkedListNode<int> node;
 
-                LinkedList<int> answer = new LinkedList<int>();
+            LinkedList<int> answer = new LinkedList<int>();
 
-                int count = 0;
+            int count = 0;
 
-                for (int i = 1; i <= n; i++)
+            for (int i = 1; i <= n; i++)
+            {
+                list.AddLast(i);
+            }
+
+            while(list.Count > 0)
+            {
+                for (int i = 1; i <= k; i++)
                 {
-                    list.AddLast(i);
-                }
-
-                do
-                {
-                    for (int i = 0; i < k-1; i++)
+                    node = list.First;
+                    if (i == k)
                     {
-                        count++;
-                        if (count == k-1)
-                        {
-                            answer.AddFirst(list.First.Value);
-                            list.RemoveFirst();
-                            count = 0; // count를 0으로 초기화하여 다음 루프에서 다시 시작할 수 있도록 함
-                        }
-                        else
-                        {
-                            list.AddLast(list.First.Value);
-                            list.RemoveFirst();
-                        }
+                        // 빼서 답 리스트에 넣기
+                        answer.AddLast(node);
+                        list.Remove(node);
                     }
-                } while (list.First != null);
-
-                foreach (int element in answer) { Console.Write($"{element} "); }
-
-             
+                    else
+                    {
+                        // First 자료를 Last로 옮기기
+                        list.Remove(node);
+                        list.AddLast(node);
+                    }
+                }
+            }
+            foreach (int element in answer) { Console.Write($"{element} "); }
+                  
         }
     }
 
