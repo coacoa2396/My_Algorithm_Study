@@ -91,7 +91,7 @@ namespace Datastructure
                 throw new ArgumentOutOfRangeException("index");
 
             count--;
-            //Array.Copy(items, index + 1, items, index);
+            Array.Copy(items, index + 1, items, index);
         }
          
         public int IndexOf(T item)
