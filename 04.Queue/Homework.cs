@@ -20,7 +20,7 @@ namespace _04.Queue
         
         public bool IsOk(string text)
         {
-            bool judgement = true;            
+            bool judgment = true;            
             Stack<char> stack = new Stack<char>();
 
             for(int i = 0; i < text.Length; i++)
@@ -35,7 +35,7 @@ namespace _04.Queue
                     case ']':
                         if (stack.Peek() != '[')
                         {
-                            judgement = false;
+                            judgment = false;
                         }
                         else
                         {
@@ -45,7 +45,7 @@ namespace _04.Queue
                     case '}':
                         if (stack.Peek() != '{')
                         {
-                            judgement = false;
+                            judgment = false;
                         }
                         else
                         {
@@ -55,7 +55,7 @@ namespace _04.Queue
                     case ')':
                         if (stack.Peek() != '(')
                         {
-                            judgement = false;
+                            judgment = false;
                         }
                         else
                         {
@@ -67,10 +67,10 @@ namespace _04.Queue
 
             if (stack.Count > 0)
             {
-                judgement = false;
+                judgment = false;
             }
            
-            return judgement;
+            return judgment;
         }
         static void Main21532152137317613245r(string[] args)
         {
