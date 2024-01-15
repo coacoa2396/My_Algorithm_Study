@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "00.Algorithm", "My_Algorith
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.List", "01.List\01.List.csproj", "{B7242216-87D6-4A0C-B066-3E3C5D66E6AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.LinkedList", "02.LinkedList\02.LinkedList.csproj", "{8607F574-60A7-4E05-891D-9B2A2602F85E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.LinkedList", "02.LinkedList\02.LinkedList.csproj", "{8607F574-60A7-4E05-891D-9B2A2602F85E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Stack", "03.Stack\03.Stack.csproj", "{A3F16B1B-607E-4CC9-B63E-5A4590A5CF82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{8607F574-60A7-4E05-891D-9B2A2602F85E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8607F574-60A7-4E05-891D-9B2A2602F85E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8607F574-60A7-4E05-891D-9B2A2602F85E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3F16B1B-607E-4CC9-B63E-5A4590A5CF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F16B1B-607E-4CC9-B63E-5A4590A5CF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F16B1B-607E-4CC9-B63E-5A4590A5CF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F16B1B-607E-4CC9-B63E-5A4590A5CF82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

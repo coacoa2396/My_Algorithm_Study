@@ -72,7 +72,7 @@
 
 
 
-        static void Main(string[] args)
+        static void Main111(string[] args)
         {
             LinkedList<string> linkedList = new LinkedList<string>();
 
@@ -91,7 +91,6 @@
             // 삭제
             bool success = linkedList.Remove("1번 데이터");         // 반환형은 boolean
             // 찾아서 지우면 O(n)
-
             linkedList.Remove(node3);
             // node로 지우면 O(1)  -> 그래서 노드로 지우는걸 지향함
             linkedList.RemoveFirst();
