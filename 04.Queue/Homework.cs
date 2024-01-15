@@ -33,15 +33,33 @@ namespace _04.Queue
                         stack.Push(text[i]);
                         break;
                     case ']':
-                    case '}':
-                    case ')':
-                        if (stack.Count > 0)
+                        if (stack.Peek() != '[')
                         {
-                            stack.Pop();
+                            judgement = false;
                         }
                         else
                         {
+                            stack.Pop();
+                        }
+                        break;
+                    case '}':
+                        if (stack.Peek() != '{')
+                        {
                             judgement = false;
+                        }
+                        else
+                        {
+                            stack.Pop();
+                        }
+                        break;
+                    case ')':
+                        if (stack.Peek() != '(')
+                        {
+                            judgement = false;
+                        }
+                        else
+                        {
+                            stack.Pop();
                         }
                         break;
                 }           
@@ -54,10 +72,10 @@ namespace _04.Queue
            
             return judgement;
         }
-        static void Main315462446421843123512145420154512(string[] args)
+        static void Main21532152137317613245r(string[] args)
         {
             Homework1 homework1 = new Homework1();
-            bool a = homework1.IsOk("[{{}]");
+            bool a = homework1.IsOk("[{(]})");
             Console.WriteLine(a);
         }
     }
@@ -120,7 +138,7 @@ namespace _04.Queue
             return answerArray;
         }
 
-        static void Main(string[] args)
+        static void Main1111(string[] args)
         {
             Homework2 homework2 = new Homework2();
             int[] jobList = { 4, 4, 12, 10, 2, 10 };
