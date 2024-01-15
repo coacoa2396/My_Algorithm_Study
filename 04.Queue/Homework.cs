@@ -33,6 +33,11 @@ namespace _04.Queue
                         stack.Push(text[i]);
                         break;
                     case ']':
+                        if (stack.Count == 0)
+                        {
+                            judgment = false;
+                            break;
+                        }
                         if (stack.Peek() != '[')
                         {
                             judgment = false;
@@ -43,6 +48,11 @@ namespace _04.Queue
                         }
                         break;
                     case '}':
+                        if (stack.Count == 0)
+                        {
+                            judgment = false;
+                            break;
+                        }
                         if (stack.Peek() != '{')
                         {
                             judgment = false;
@@ -53,6 +63,11 @@ namespace _04.Queue
                         }
                         break;
                     case ')':
+                        if (stack.Count == 0)
+                        {
+                            judgment = false;
+                            break;
+                        }
                         if (stack.Peek() != '(')
                         {
                             judgment = false;
