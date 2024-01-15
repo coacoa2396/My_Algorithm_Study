@@ -27,7 +27,7 @@
         // └─┴─┴─┴─┴─┴─┴─┴─┘      └─┴─┴─┴─┴─┴─┴─┴─┘
 
 
-        static void Main(string[] args)
+        static void Main1111(string[] args)
         {
             Stack<int> stack = new Stack<int>();
 

@@ -93,7 +93,7 @@
         //   비어있는 경우         가득찬 경우(로 판정)
 
 
-        static void Main(string[] args)
+        static void Main1323(string[] args)
         {
             Queue<int> queue = new Queue<int>();
 
