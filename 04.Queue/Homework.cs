@@ -20,8 +20,7 @@ namespace _04.Queue
         
         public bool IsOk(string text)
         {
-            bool judgement = true;
-            char a;
+            bool judgement = true;            
             Stack<char> stack = new Stack<char>();
 
             for(int i = 0; i < text.Length; i++)
@@ -61,5 +60,74 @@ namespace _04.Queue
             bool a = homework1.IsOk("[{{}]");
             Console.WriteLine(a);
         }
+    }
+
+
+
+
+    public class Homework2
+    {
+        // <작업 프로세스>
+        // 각 작업이 몇시간이 걸리는 작업인지 포함한 배열이 있으며
+        // 하루에 8시간씩 일할 수 잇는 회사가 있음.
+        // 남는시간없이 주어진 일을 계속 한다고 했을 때
+        // 각각의 작업이 끝나는 날짜를 결과 배열로 출력하는 함수 작성
+
+        public int[] ProcessJob(int[] jobList)
+        {
+            Queue<int> answer = new Queue<int>();
+            int spareTime = 8;
+            int spareJob = 0;
+            int day = 1;
+            Queue<int> queue = new Queue<int>();
+
+            for (int i = 0; i < jobList.Length; i++)
+            {
+                queue.Enqueue(jobList[i]);
+            }
+
+            spareJob = queue.Dequeue();
+            do
+            {          
+                if (spareJob - spareTime <= 0)
+                {
+                    answer.Enqueue(day);
+                    spareTime = Math.Abs(spareJob - spareTime);
+                    if (queue.Count == 0)
+                        break;
+                    if(queue.Count > 0)
+                        spareJob = queue.Dequeue();
+                    if (spareTime == 0)
+                    {
+                        day++;
+                        spareTime = 8;
+                    }
+                }
+                else if (spareJob - spareTime > 0)
+                {
+                    spareJob = spareJob - spareTime;
+                    spareTime = 8;
+                    day++;
+                }            
+            } while (queue.Count >= 0 && spareJob > 0);
+            
+            int[] answerArray = answer.ToArray();
+            
+            for (int i = 0; i < answerArray.Length; i++)
+            {
+                Console.WriteLine(answerArray[i]);
+            }
+            return answerArray;
+        }
+
+        static void Main(string[] args)
+        {
+            Homework2 homework2 = new Homework2();
+            int[] jobList = { 4, 4, 12, 10, 2, 10 };
+            homework2.ProcessJob(jobList);
+        }
+
+
+
     }
 }
