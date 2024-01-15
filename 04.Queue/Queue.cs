@@ -41,9 +41,9 @@ namespace DataStructure
 
         public void Enqueue(T item)
         {
-            if (IsFull())
+            if (IsFull())                                   // 꽉 차있으면
             {
-                Grow();
+                Grow();                                     // 용량을 늘려준다
             }
 
             array[tail] = item;
@@ -52,8 +52,8 @@ namespace DataStructure
 
         public T Dequeue()
         {
-            if (IsEmpty())
-                throw new InvalidOperationException();
+            if (IsEmpty())                                  // 비어있으면
+                throw new InvalidOperationException();      // 예외를 뱉는다
 
             T result = array[head];
             MoveNext(ref head);
@@ -62,8 +62,8 @@ namespace DataStructure
 
         public T Peek()
         {
-            if (IsEmpty())
-                throw new InvalidOperationException();
+            if (IsEmpty())                                   // 비어있으면
+                throw new InvalidOperationException();       // 예외를 뱉는다
 
             return array[head];
         }
