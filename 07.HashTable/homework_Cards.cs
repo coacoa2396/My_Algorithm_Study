@@ -11,29 +11,20 @@ namespace _07.HashTable
     {
         public static void Main1213(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-            string[] my_deck = new string[n];
-            int k = int.Parse(Console.ReadLine());
-
-            Stack<string> stack = new Stack<string>();
             HashSet<string> hashSet = new HashSet<string>();
+            Stack<string> stack = new Stack<string>();
+            int n = int.Parse(Console.ReadLine());
+            int k = int.Parse(Console.ReadLine());
+            string[] my_deck = new string[n];
 
-            int deckCount = n;
-            for (int i = 0; i < deckCount; i++)
+            
+            for (int i = 0; i < n; i++)
             {
                 my_deck[i] = Console.ReadLine();
             }
             // 입력 완료
 
-            string result;
-            for(int a = 0; a < my_deck.Length; a++)
-            {
-                result = "";
-                do
-                {
-                    stack.Push(my_deck[a]);
-                } while ();
-            }
+
 
         }
     }
