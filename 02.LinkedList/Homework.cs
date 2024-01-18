@@ -72,21 +72,19 @@ namespace _02.LinkedList
     {
         public void Josephus(int n, int k)
         {
-            
-            
+
+
             LinkedList<int> list = new LinkedList<int>();
             LinkedListNode<int> node;
 
             LinkedList<int> answer = new LinkedList<int>();
-
-            int count = 0;
 
             for (int i = 1; i <= n; i++)
             {
                 list.AddLast(i);
             }
 
-            while(list.Count > 0)
+            while (list.Count > 0)
             {
                 for (int i = 1; i <= k; i++)
                 {
@@ -95,7 +93,7 @@ namespace _02.LinkedList
                     {
                         // 빼서 답 리스트에 넣기
                         list.Remove(node);
-                        answer.AddLast(node);           
+                        answer.AddLast(node);
                     }
                     else
                     {
@@ -106,7 +104,7 @@ namespace _02.LinkedList
                 }
             }
             foreach (int element in answer) { Console.Write($"{element} "); }
-                  
+
         }
     }
 
