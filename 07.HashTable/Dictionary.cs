@@ -38,7 +38,7 @@ namespace Datastructure
                 }
                 else
                 {
-                    throw new KeyNotFoundException();
+                    throw new KeyNotFoundException();   // 해당 키에 데이터가 없는경우
                 }
             }
             set
