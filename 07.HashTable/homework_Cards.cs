@@ -39,10 +39,9 @@ namespace _07.HashTable
                 pickedCards = new List<int> { cards[i] };   // 첫번째 카드를 리스트에 넣는다
 
 
-                for (int j = i + 1; j <= n; j++)            // 나머지 카드를 하나씩 리스트에 넣는다 << k번만큼 반복한다
+                for (int j = i + 1; j < n; j++)            // 나머지 카드를 하나씩 리스트에 넣는다 << k번만큼 반복한다
                 {
-                    if (pickedCards.Count == n)             // 추가 하기 전에 카운트가 같다면 중지
-                        break;
+                    
                     pickedCards.Add(cards[j]);
 
                     if (pickedCards.Count == k)             // 넣은 카드의 수가 k와 동일해지면
@@ -52,7 +51,7 @@ namespace _07.HashTable
                         // 저장한 숫자를 hashSet에 저장한다
                         hashSet.Add(joinedNum);
                         // 제일 마지막에 넣은 것을 하나 삭제해서 다음 것을 넣게 해준다
-                        pickedCards.RemoveAt(pickedCards.Count - 1);
+                        pickedCards.RemoveAt(pickedCards.Count - (k-1));
                     }
                 }
             }
