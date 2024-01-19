@@ -51,7 +51,7 @@ namespace _07.HashTable
                         // 저장한 숫자를 hashSet에 저장한다
                         hashSet.Add(joinedNum);
                         // 제일 마지막에 넣은 것을 하나 삭제해서 다음 것을 넣게 해준다
-                        pickedCards.RemoveAt(pickedCards.Count - (k-1));
+                        pickedCards.RemoveAt(pickedCards.Count - 1);
                     }
                 }
             }
