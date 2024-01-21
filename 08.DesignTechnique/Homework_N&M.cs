@@ -29,7 +29,7 @@ namespace _08.DesignTechnique
         }
 
 
-        public static void Main(string[] args)
+        public static void Main123214(string[] args)
         {
             HashSet<string> answer = new HashSet<string>();
             string s = Console.ReadLine();
