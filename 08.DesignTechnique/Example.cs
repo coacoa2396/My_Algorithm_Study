@@ -10,7 +10,7 @@ namespace _08.DesignTechnique
     {
         // 연속합 : 백준 1912
 
-        static void Main(string[] args)
+        static void Main123125451(string[] args)
         {
             int[] values = { 10, -4, 3, 1, 5, 6, -35, 12, 21, -1 };
             int max = int.MinValue;
