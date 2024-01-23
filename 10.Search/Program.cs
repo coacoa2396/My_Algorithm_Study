@@ -46,7 +46,7 @@
 
 
             // DFS 탐색
-            Searching.DFS(in graph, 0, out bool[] dfsVisited, out int[] dfsPath);
+            Searching.DFS(graph, 0, out bool[] dfsVisited, out int[] dfsPath);
             Console.WriteLine("<DFS>");
             PrintGraphSearch(dfsVisited, dfsPath);
             Console.WriteLine();
