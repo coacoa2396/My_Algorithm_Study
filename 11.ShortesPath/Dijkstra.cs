@@ -17,6 +17,7 @@ namespace _11.ShortesPath
         ********************************************************************/
         // 정점의 숫자가 높거나 낮은 것이 우선순위가 아니고
         // 정점에서 다음 정점까지 연결된 거리가 짧은 것이 우선순위가 높다(최단거리 알고리즘)
+        // 가장 가까운 정점을 선택해서 그곳을 거쳐서 갔을 때 더 짧아지면 갱신
 
         const int INF = 99999;
         public static void ShortestPath(in int[,] graph, in int start, out int[] distance, out int[] parents)
