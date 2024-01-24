@@ -5,7 +5,7 @@ namespace _11.ShortestPath
     internal class Program
     {
         const int INF = 99999;
-        static void Main(string[] args)
+        static void Main123213213(string[] args)
         {
             int[,] graph = new int[9, 9]
             {
