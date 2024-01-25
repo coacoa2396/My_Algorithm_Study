@@ -18,16 +18,16 @@ namespace _11.ShortesPath
         // 정점의 숫자가 높거나 낮은 것이 우선순위가 아니고
         // 정점에서 다음 정점까지 연결된 거리가 짧은 것이 우선순위가 높다(최단거리 알고리즘)
         // 가장 가까운 정점을 선택해서 그곳을 거쳐서 갔을 때 더 짧아지면 갱신
-
+        int a = int.MaxValue;
         const int INF = 99999;
-        public static void ShortestPath(in int[,] graph, in int start, out int[] distance, out int[] parents)
+        public static void ShortestPath(int[,] graph, int start, out bool[] visited, out int[] distance, out int[] parents)
         {
             int size = graph.GetLength(0);
-            bool[] visited = new bool[size];
+            visited = new bool[size];
             distance = new int[size];
             parents = new int[size];
 
-            for (int i = 0; i < size; i++)      // 기본세팅
+            for (int i = 0; i < size; i++)  // 초기세팅 작업
             {
                 distance[i] = INF;
                 parents[i] = -1;
@@ -42,18 +42,18 @@ namespace _11.ShortesPath
                 int minCost = INF;
                 for (int j = 0; j < size; j++)
                 {
-                    if (!visited[j] &&
-                        distance[j] < minCost)
+                    if (!visited[j] &&              // 방문하지 않은 정점
+                        distance[j] < minCost)      // 가까운 정점
                     {
                         next = j;
                         minCost = distance[j];
                     }
                 }
-
                 if (next < 0)
                     break;
+                visited[next] = true;
 
-                // 2. 직접연결된 거리보다 거쳐서 더 짧아진다면 갱신
+                // 2. 직접연결된 거리보다 거쳐서 더 짧아진다면 갱신.
                 for (int j = 0; j < size; j++)
                 {
                     // distance[j] : 목적지까지 직접 연결된 거리
@@ -65,7 +65,6 @@ namespace _11.ShortesPath
                         parents[j] = next;
                     }
                 }
-                visited[next] = true;
             }
         }
     }
